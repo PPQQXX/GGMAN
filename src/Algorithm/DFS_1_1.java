@@ -2,16 +2,16 @@ package Algorithm;
 
 import java.util.Scanner;
 /*
- * static¿ÉÒÔ»ØÈ¥¿´Ò»ÏÂÁË
+ * staticå¯ä»¥å›å»çœ‹ä¸€ä¸‹äº†
  */
 public class DFS_1_1 {
-	public static int count;// ¾²Ì¬ Ä¬ÈÏ0
+	public static int count;// é™æ€ é»˜è®¤0
 	public static int[] a = new int[10];
-	public static int[] book = new int[10]; // ´æ´¢×´Ì¬µÄÊı×é
+	public static int[] book = new int[10]; // å­˜å‚¨çŠ¶æ€çš„æ•°ç»„
 	public static int n;
 	private static void dfs(int i) {
 		// TODO Auto-generated method stub
-		// i±íÊ¾µÚi¸öÊı£¬·Åµ½µÚi¸öºĞ×ÓÀï£¬ÏÂ±ê´ÓÁã¿ªÊ¼ µ±i==n+1£¬×îºóÒ»¸öµÄºóÃæ
+		// iè¡¨ç¤ºç¬¬iä¸ªæ•°ï¼Œæ”¾åˆ°ç¬¬iä¸ªç›’å­é‡Œï¼Œä¸‹æ ‡ä»é›¶å¼€å§‹ å½“i==n+1ï¼Œæœ€åä¸€ä¸ªçš„åé¢
 		if (i == n + 1) {
 			count++;
 			for (int j =1; j <=n; j++) {
@@ -27,7 +27,7 @@ public class DFS_1_1 {
 				a[i] = j;
 				book[j] = 1;
 				dfs(i + 1);
-				book[j] = 0;// ·µ»ØÊ±£¬ÖÃÎª0
+				book[j] = 0;// è¿”å›æ—¶ï¼Œç½®ä¸º0
 			}
 		}
 		return;

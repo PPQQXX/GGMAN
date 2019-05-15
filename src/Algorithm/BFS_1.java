@@ -2,46 +2,52 @@ package Algorithm;
 
 import java.util.Scanner;
 
-import javax.sound.sampled.TargetDataLine;
 
 /*
- *±È½ÏDFS_2
- *
- *Ò»¸ö¶ÓÁĞque[2501]
- *a[][]´æÍ¼
- *book[][]±ê¼Ç
+ *æ¯”è¾ƒDFS_2
+ 5 4 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 1 1 4 3
+  è¾“å…¥æ•°æ®
+ *ä¸€ä¸ªé˜Ÿåˆ—que[2501]
+ *a[][]å­˜å›¾
+ *book[][]æ ‡è®°
  */
 public class BFS_1 {
-	public static int sx, sy, px, py;// ÆğÊ¼µã×ø±ê£¬Ä¿±êµã×ø±ê
-	public static int n, m;// nĞĞmÁĞ
-	// ÔÚÕâÀï¿ÉÒÔÖ±½Ó°Ñn£¬m¸øÊı×é£¬µ«£¬»¹Ã»ÊäÈë£¬Ä¬ÈÏÖµÎª0,,,Êµ¼ÊÉÏÎŞĞ§
-	public static Que[] que = new Que[2501]; // ¶ÓÁĞ
-	public static int head, tail; // Í·£¬×îºóµÄºóÃæ
-	public static int[][] book = new int[51][51];// ±ê¼Ç
-	public static int[][] a = new int[51][51];// ¶şÎ¬Êı×é±íÊ¾Í¼
-	public static int[][] next = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };// ÓÒ±ß¿ªÊ¼ Ë³Ê±ÕëĞı×ª4
+	public static int sx, sy, px, py;// èµ·å§‹ç‚¹åæ ‡ï¼Œç›®æ ‡ç‚¹åæ ‡
+	public static int n, m;// nè¡Œmåˆ—
+	// åœ¨è¿™é‡Œå¯ä»¥ç›´æ¥æŠŠnï¼Œmç»™æ•°ç»„ï¼Œä½†ï¼Œè¿˜æ²¡è¾“å…¥ï¼Œé»˜è®¤å€¼ä¸º0,,,å®é™…ä¸Šæ— æ•ˆ
+	public static Que[] que = new Que[500]; // é˜Ÿåˆ—  2501
+	public static int head, tail; // å¤´ï¼Œæœ€åçš„åé¢
+	public static int[][] book = new int[51][51];// æ ‡è®°
+	public static int[][] a = new int[51][51];// äºŒç»´æ•°ç»„è¡¨ç¤ºå›¾
+	public static int[][] next = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };// å³è¾¹å¼€å§‹ é¡ºæ—¶é’ˆæ—‹è½¬4
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int flag = 0;
 		int tx = 0, ty = 0;
 		Scanner rd = new Scanner(System.in);
-		// ¶ÁÈënĞĞ£¬mÁĞ
+		//è¿™ä¸ªåœ°æ–¹æ³¨æ„
+		for (int i = 0; i < 500; i++) {
+			que[i]=new Que();
+		}
+		
+		
+		// è¯»å…¥nè¡Œï¼Œmåˆ—
 		n = rd.nextInt();
 		m = rd.nextInt();
-		// ¶ÁÈëÍ¼
+		// è¯»å…¥å›¾
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= m; j++) {
 				a[i][j] = rd.nextInt();
 			}
 		}
-		// ÆğµãÖÕµã
+		// èµ·ç‚¹ç»ˆç‚¹
 		sx = rd.nextInt();
 		sy = rd.nextInt();
 		px = rd.nextInt();
 		py = rd.nextInt();
 
-		// ¶ÓÁĞ³õÊ¼»¯
+		// é˜Ÿåˆ—åˆå§‹åŒ–
 		head = 1;
 		tail = 1;
 		que[tail].x = sx;
@@ -51,37 +57,35 @@ public class BFS_1 {
 		book[sx][sy] = 1;
 
 		while (head < tail) {
-			for (int i = 0; i <= 3; i++) {
-				tx = que[head].x + next[i][0];
-				ty = que[head].y + next[i][1];
-				// µÃµ½ĞÂµÄµã£¬ÅĞ¶ÏºÏ·¨ĞÔ
-				// ÅĞ¶ÏÊÇ·ñÔ½½ç
-				if (tx < 1 || tx > n || ty < 1 || ty > m)
+			for (int k = 0; k <= 3; k++) {
+				tx = que[head].x + next[k][0];
+				ty = que[head].y + next[k][1];
+				if (tx < 1 || tx > n || ty < 1 || ty > m) {// åˆ¤æ–­æ˜¯å¦å‡ºäº†åœ°å›¾
 					continue;
-				if (a[tx][ty] == 0 && book[tx][ty] == 0)// 1±íÊ¾×ß²»Í¨,0±íÊ¾Í¨
-				{
-					book[tx][ty] = 1;
+				}
+				if (a[tx][ty] == 0 && book[tx][ty] == 0) {// åˆ¤æ–­æ˜¯å¦èµ°è¿‡å’Œæœ‰æ— éšœç¢ç‰©
+					book[tx][ty] = 1;// ä¸‹ä¸€æ­¥å¯ä»¥èµ° æ ‡è®°èµ°è¿‡
 					que[tail].x = tx;
 					que[tail].y = ty;
-					que[tail].step = que[head].step + 1;
-					tail++;
+					que[tail].step = que[head].step + 1;// ä¸‹ä¸€æ­¥ æ˜¯çˆ¶äº²æ­¥æ•°+1
+					tail++;// å…¥é˜Ÿå»¶é•¿é˜Ÿåˆ—
 				}
 				if (tx == px && ty == py) {
 					flag = 1;
 					break;
 				}
 			}
-			if (flag == 1)
+			if (flag == 1) {
 				break;
+			}
 			head++;
 		}
-		System.out.println(flag);
 		System.out.println(que[head].step);
 	}
 }
 
 class Que {
-	static int x=0;
-	static int y=0;
-	static int step=0;
+	 int x;
+	 int y;
+	 int step;
 }

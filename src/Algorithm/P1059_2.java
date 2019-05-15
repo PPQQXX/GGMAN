@@ -9,7 +9,7 @@ import java.util.TreeSet;
  * 
  * 
  * SET
- * �����������ֱ��һ·���ף���ôͣ��ǰһ���أ�
+ * 迭代器输出，直接一路到底，怎么停在前一个呢？
  * @author 11869
  *
  */

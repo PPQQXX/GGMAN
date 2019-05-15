@@ -58,6 +58,7 @@ public class P1059 {
 		if (l > r) {
 			return;
 		}
+		
 		temp = a[l];
 		i = l;// 左
 		j = r;// 右
@@ -80,6 +81,8 @@ public class P1059 {
 		quickSort(a, i + 1, r);// you digui
 	}
 }
-/*这个其实就可以把所有的排序算法，放在一个package里面，然后每个排序算法一个类，然后实现这个类，那么实现起来，可以先定义一个interface，类似于interface Sort，
-接口里面写两个方法，一个是sort接口，一个是timeConsumeCount方法，然后每个排序类实现这个接口,另外要尽量避免直接写main函数，要测试可以写测试类，也可以在一个统一的包下面写一个有
+/*这个其实就可以把所有的排序算法，放在一个package里面，然后每个排序算法一个类，
+ * 然后实现这个类，那么实现起来，可以先定义一个interface，类似于interface Sort，
+接口里面写两个方法，一个是sort接口，一个是timeConsumeCount方法，然后每个排序类实现这个接口,
+另外要尽量避免直接写main函数，要测试可以写测试类，也可以在一个统一的包下面写一个有
 main方法的类*/

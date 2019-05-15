@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 /*
  *
- * Ïä×Ó  ---Ö½ÅÆ
+ * ç®±å­  ---çº¸ç‰Œ
  */
 public class DFS_1 {
 	public static void main(String[] args) {
-		int n;// n¸öÊı
+		int n;// nä¸ªæ•°
 		Scanner reader = new Scanner(System.in);
 		n = reader.nextInt();
 		int[] a = new int[n + 1];
-		int[] book = new int[n + 1];// ³õÊ¼»¯±ê¼ÇÊı×é 0Î´Ê¹ÓÃ ÏÂ±ê´Ó0¿ªÊ¼
+		int[] book = new int[n + 1];// åˆå§‹åŒ–æ ‡è®°æ•°ç»„ 0æœªä½¿ç”¨ ä¸‹æ ‡ä»0å¼€å§‹
 		for (int i = 0; i < n + 1; i++) {
 			book[i] = 0;
 			a[i] = 0;
@@ -22,10 +22,10 @@ public class DFS_1 {
 
 	private static void dfs(int i, int[] a, int[] book, int n) {
 		// TODO Auto-generated method stub
-		// i±íÊ¾µÚi¸öÊı£¬·Åµ½µÚi¸öºĞ×ÓÀï£¬ÏÂ±ê´ÓÁã¿ªÊ¼ µ±i==n+1£¬×îºóÒ»¸öµÄºóÃæ
+		// iè¡¨ç¤ºç¬¬iä¸ªæ•°ï¼Œæ”¾åˆ°ç¬¬iä¸ªç›’å­é‡Œï¼Œä¸‹æ ‡ä»é›¶å¼€å§‹ å½“i==n+1ï¼Œæœ€åä¸€ä¸ªçš„åé¢
 		if (i == n+1) {
 			for (int j = 1; j < a.length; j++) {
-				System.out.print(a[j] + "~~");//Êä³öµÄµÚÒ»ĞĞÖĞa[i]ÊÇ0£¿
+				System.out.print(a[j] + "~~");//è¾“å‡ºçš„ç¬¬ä¸€è¡Œä¸­a[i]æ˜¯0ï¼Ÿ
 				if (j %(n)== 0) {
 					System.out.println();
 				}
@@ -37,7 +37,7 @@ public class DFS_1 {
 				a[i] = j;
 				book[j] = 1;
 				dfs(i + 1, a, book, n);
-				book[j] = 0;// ·µ»ØÊ±£¬ÖÃÎª0
+				book[j] = 0;// è¿”å›æ—¶ï¼Œç½®ä¸º0
 			}
 		}
 		return;

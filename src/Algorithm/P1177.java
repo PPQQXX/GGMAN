@@ -34,8 +34,8 @@ public class P1177 {
 			return;
 		}
 		temp = a[l];
-		i = l;// 左
-		j = r;// 右
+		i = l;// zuo
+		j = r;// you
 		while (i != j) {
 			while (a[j] >= temp && i < j) 
 				j--;
@@ -48,7 +48,7 @@ public class P1177 {
 				a[i]=t;
 			}
 		}
-		//将基数归位
+		
 		a[l]=a[i];
 		a[i]=temp;
 		

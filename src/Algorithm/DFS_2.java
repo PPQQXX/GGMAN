@@ -3,55 +3,55 @@ package Algorithm;
 import java.util.Scanner;
 /*
  * 5 4 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 1 1 4 3
-  ÊäÈëÊı¾İ
-  Í¼´óĞ¡ÏŞÖÆ51ÏÂ
+  è¾“å…¥æ•°æ®
+  å›¾å¤§å°é™åˆ¶51ä¸‹
  */
 public class DFS_2 {
-	public static int sx, sy, px, py, min = 9999;// ÆğÊ¼µã×ø±ê£¬Ä¿±êµã×ø±ê
-	public static int n, m;// nĞĞmÁĞ
-	//ÔÚÕâÀï¿ÉÒÔÖ±½Ó°Ñn£¬m¸øÊı×é£¬µ«£¬»¹Ã»ÊäÈë£¬Ä¬ÈÏÖµÎª0,,,Êµ¼ÊÉÏÎŞĞ§
-	public static int[][] book = new int[51][51];// ±ê¼Ç
-	public static int[][] a = new int[51][51];// ¶şÎ¬Êı×é±íÊ¾Í¼
-	// int[][]²»¿ÉÒÔÖ±½ÓÖ¸¶¨ ÉêÃ÷Ê±²»¿ÉÒÔ·ÖÅä¿Õ¼ä
-	public static int[][] next = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };// ÓÒ±ß¿ªÊ¼ Ë³Ê±ÕëĞı×ª4
+	public static int sx, sy, px, py, min = 9999;// èµ·å§‹ç‚¹åæ ‡ï¼Œç›®æ ‡ç‚¹åæ ‡
+	public static int n, m;// nè¡Œmåˆ—
+	//åœ¨è¿™é‡Œå¯ä»¥ç›´æ¥æŠŠnï¼Œmç»™æ•°ç»„ï¼Œä½†ï¼Œè¿˜æ²¡è¾“å…¥ï¼Œé»˜è®¤å€¼ä¸º0,,,å®é™…ä¸Šæ— æ•ˆ
+	public static int[][] book = new int[51][51];// æ ‡è®°
+	public static int[][] a = new int[51][51];// äºŒç»´æ•°ç»„è¡¨ç¤ºå›¾
+	// int[][]ä¸å¯ä»¥ç›´æ¥æŒ‡å®š ç”³æ˜æ—¶ä¸å¯ä»¥åˆ†é…ç©ºé—´
+	public static int[][] next = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };// å³è¾¹å¼€å§‹ é¡ºæ—¶é’ˆæ—‹è½¬4
 
 	public static void main(String[] args) {
 		Scanner rd = new Scanner(System.in);
-		// ¶ÁÈënĞĞ£¬mÁĞ
+		// è¯»å…¥nè¡Œï¼Œmåˆ—
 		n = rd.nextInt();
 		m = rd.nextInt();
-		// ¶ÁÈëÍ¼
+		// è¯»å…¥å›¾
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= m; j++) {
 				a[i][j] = rd.nextInt();
 			}
 		}
-		// ÆğµãÖÕµã
+		// èµ·ç‚¹ç»ˆç‚¹
 		sx = rd.nextInt();
 		sy = rd.nextInt();
 		px = rd.nextInt();
 		py = rd.nextInt();
-		book[sx][sy] = 1;// ÆğÊ¼µã ÖÃÎª1
+		book[sx][sy] = 1;// èµ·å§‹ç‚¹ ç½®ä¸º1
 		dfs(sx, sy, 0);
 		System.out.println(min);
 	}
 
-	public static void dfs(int x, int y, int step) {// ×ø±êx.y¡£²½Êıstep
+	public static void dfs(int x, int y, int step) {// åæ ‡x.yã€‚æ­¥æ•°step
 		int tx = x, ty = y;
-		// ÅĞ¶ÏÊÇ·ñµ½´ïÖ¸¶¨Î»ÖÃ
+		// åˆ¤æ–­æ˜¯å¦åˆ°è¾¾æŒ‡å®šä½ç½®
 		if (tx == px && ty == py) {
 			if (step < min)
 				min = step;
 			return;
 		}
-		// ¼ÆËãÏÂÒ»²½µÄ×ø±ê
+		// è®¡ç®—ä¸‹ä¸€æ­¥çš„åæ ‡
 		for (int i = 0; i <= 3; i++) {
 			tx = x + next[i][0];
 			ty = y + next[i][1];
-			// ÅĞ¶ÏÊÇ·ñÔ½½ç
+			// åˆ¤æ–­æ˜¯å¦è¶Šç•Œ
 			if (tx < 1 || tx > n || ty < 1 || ty > m)
 				continue;
-			if (a[tx][ty] == 0 && book[tx][ty] == 0)// 1±íÊ¾×ß²»Í¨,0±íÊ¾Í¨
+			if (a[tx][ty] == 0 && book[tx][ty] == 0)// 1è¡¨ç¤ºèµ°ä¸é€š,0è¡¨ç¤ºé€š
 			{
 				book[tx][ty] = 1;
 				dfs(tx, ty, step + 1);

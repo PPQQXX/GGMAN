@@ -49,16 +49,15 @@ public class QuickSort implements Sort {
 		quickSort(a, i + 1, r);// you digui
 	}
 
-	public <T> boolean compare(T a,T temp) {
-		
+	public <T> boolean compare(T a, T temp) {
+
 		return false;
 	}
 
 	/*
-	 * @Override 
-	 * public void sort(int[] a) { // TODO Auto-generated method stub int
+	 * @Override public void sort(int[] a) { // TODO Auto-generated method stub int
 	 * l=0,r=a.length-1; quickSort(a, l, r); }
-	
+	 * 
 	 * public void quickSort(int[] a, int l, int r) { int i, j, t, temp; if (l > r)
 	 * { return; }
 	 * 

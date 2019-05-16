@@ -64,6 +64,7 @@ public class BFS_1 {
 					continue;
 				}
 				if (a[tx][ty] == 0 && book[tx][ty] == 0) {// 判断是否走过和有无障碍物
+					System.out.println(tx+" "+ty);
 					book[tx][ty] = 1;// 下一步可以走 标记走过
 					que[tail].x = tx;
 					que[tail].y = ty;
@@ -80,7 +81,7 @@ public class BFS_1 {
 			}
 			head++;
 		}
-		System.out.println(que[head].step);
+		System.out.println(que[tail-1].step);
 	}
 }
 

@@ -79,7 +79,7 @@ public class Floyd_Warshall {
 
 	public static void main(String[] args) {
 		Short s = new Short();
-		//s.Flyod(e);
+		s.Flyod(e);
 		s.Dijkstra(a);
 	}
 }

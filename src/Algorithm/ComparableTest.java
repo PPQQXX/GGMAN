@@ -7,19 +7,19 @@ public class ComparableTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Set<Integer> set = new TreeSet<>();//有序 ，不可重复
+		Set<Integer> set = new TreeSet<>();// 有序 ，不可重复
 
 		set.add(300);
 		set.add(200);
 		set.add(600);
-		
+
 		// 按照元素递增的方式排好序
 		for (Integer m : set) {
 			System.out.println(m);
 		}
 
 		Set<Emp> set2 = new TreeSet<>();
-		set2.add(new Emp(100, "张三", 3000));
+		set2.add(new Emp(100, "张三", 20000));
 		set2.add(new Emp(50, "李四", 2000));
 		set2.add(new Emp(150, "王五", 8000));
 		set2.add(new Emp(30, "赵六", 20000));
@@ -55,7 +55,7 @@ class Emp implements Comparable<Emp> {
 			return 1;
 		} else if (this.salary < o.salary) {
 			return -1;
-		} else {//salary相同就比较id
+		} else {// salary相同就比较id
 			if (this.id > o.id) {
 				return 1;
 			} else if (this.id < o.id) {

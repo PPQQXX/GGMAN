@@ -1,69 +1,46 @@
 package Algorithm;
- 
-import java.util.Arrays;
-import java.util.Comparator;
- 
+
+import java.util.Scanner;
+/**
+ * scanner  中 各种数据读入，，，
+ * next 与 nextline区别
+ * @author 11869
+ *
+ */
 public class P1781 {
- 
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
- 
-		Integer[] array = { Integer.valueOf(6), Integer.valueOf(8),
-				Integer.valueOf(2), Integer.valueOf(4), Integer.valueOf(9),
-				Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(90),
-				Integer.valueOf(310), Integer.valueOf(67),
-				Integer.valueOf(300), Integer.valueOf(78) };
-		System.out.println(Arrays.toString(array));
-		quickSort(array, 0, array.length - 1, new Comparator<Integer>() {
- 
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				return o1 < o2 ? -1 : (o1 == o2 ? 0 : 1);
+		int n,id;//id 就是第几个出现的
+		String max="";
+		String p;//输入的票数
+		Scanner rd=new Scanner(System.in);
+		//总数
+		int num;
+		num=rd.nextInt();
+		//第一个当做max
+		max=rd.next();
+		n=id=1;
+		//其余n-1
+		for (int i = 1; i <=num-1; i++) {
+			p=rd.next();
+			n++;
+			/*System.out.println(max+" "+p);
+			System.out.println(max.length()+" "+p.length());*/
+			if(max.length()<p.length())
+			{
+				id=n;
+				max=p;
 			}
-		});
-		System.out.println(Arrays.toString(array));
-	}
- 
-	public static <T> void quickSort(T[] array, int lowIndex, int highIndex,
-			Comparator<T> comparator) {
-		if (lowIndex >= highIndex) {
-			return;
-		}
- 
-		int i = lowIndex;
-		int j = highIndex;
- 
-		T key = array[lowIndex];
- 
-		while (true) {
-			while (i < j) {
-				if (comparator.compare(array[j], key) < 0) {
-					array[i] = array[j];
-					break;
+			if (max.length()==p.length()) {
+				if(max.compareTo(p)<0)
+				{
+					id=n;
+					max=p;
 				}
-				j--;
 			}
- 
-			while (i < j) {
-				if (comparator.compare(array[i], key) > 0) {
-					array[j] = array[i];
-					break;
-				}
-				i++;
-			}
- 
-			if (i == j) {
-				array[j] = key;
- 
-				quickSort(array, lowIndex, j - 1, comparator);
-				quickSort(array, j + 1, highIndex, comparator);
- 
-				return;
-			}
- 
-			System.out.println(Arrays.toString(array));
 		}
+		System.out.println(id);
+		System.out.print(max);
 	}
 }
+ 

@@ -2,7 +2,9 @@ package Algorithm;
 
 import java.io.IOException;
 import java.util.Scanner;
-
+/*
+ * 
+ */
 
 public class P1177 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -18,6 +20,7 @@ public class P1177 {
 //			array[i]=Integer.parseInt(bf.readLine());
 			array[i]=reader.nextInt();
 		}
+		reader.close();
 		quickSort(array, 0, n-1);
 		for (i = 0; i < n-1; i++) {
 			System.out.print(array[i]+" ");

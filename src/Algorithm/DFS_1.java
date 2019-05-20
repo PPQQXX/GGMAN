@@ -11,6 +11,7 @@ public class DFS_1 {
 		int n;// n个数
 		Scanner reader = new Scanner(System.in);
 		n = reader.nextInt();
+		reader.close();
 		int[] a = new int[n + 1];
 		int[] book = new int[n + 1];// 初始化标记数组 0未使用 下标从0开始
 		for (int i = 0; i < n + 1; i++) {

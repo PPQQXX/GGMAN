@@ -5,7 +5,13 @@ import java.util.Scanner;
  * scanner  中 各种数据读入，，，
  * next 与 nextline区别
  * @author 11869
- *
+ * shuru ：
+5
+98765
+12365
+87954
+1022356
+985678
  */
 public class P1781 {
 	
@@ -39,6 +45,7 @@ public class P1781 {
 				}
 			}
 		}
+		rd.close();
 		System.out.println(id);
 		System.out.print(max);
 	}

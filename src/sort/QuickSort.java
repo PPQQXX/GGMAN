@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class QuickSort implements Sort {
 
 	@Override
-	public <T> void sort(T[] a) {
+	public <T> void sort(int[] a) {
 		// TODO Auto-generated method stub
 		int l = 0, r = a.length - 1;
 		quickSort(a, l, r);

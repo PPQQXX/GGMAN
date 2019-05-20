@@ -3,6 +3,7 @@ package Algorithm;
 
 /**
  * 3500K,1000ms
+
  * 快速排序+手动去重
  * 下一个尝试set加去重
  */
@@ -22,6 +23,7 @@ public class P1059 {
 		for (i = 0; i < n; i++) {
 			array[i] = reader.nextInt();
 		}
+		reader.close();
 		// 先排序
 		quickSort(array, 0, n - 1);
 		// 再去重

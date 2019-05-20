@@ -27,13 +27,14 @@ public class P1059_2 {
 			num=reader.nextInt();
 			a[num]=1;
 		}
+		reader.close();
 		for (int i = 0; i < a.length; i++) {
 			/*System.out.print(a[i]+"~");*/
 			if(a[i]==1)
 				set.add(i);
 		}
 		System.out.println(set.size());
-		for (Iterator iterator = set.iterator(); iterator.hasNext();) {
+		for (Iterator<Integer> iterator = set.iterator(); iterator.hasNext();) {
 			Integer integer = (Integer) iterator.next();
 			System.out.print(integer+" ");
 		}

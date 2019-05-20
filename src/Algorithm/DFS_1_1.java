@@ -1,6 +1,7 @@
 package Algorithm;
 
 import java.util.Scanner;
+
 /*
  * static可以回去看一下了
  */
@@ -40,6 +41,7 @@ public class DFS_1_1 {
 			book[i] = 0;
 			a[i] = 0;
 		}
+		reader.close();
 		dfs(1);
 		System.out.println(count);
 	}

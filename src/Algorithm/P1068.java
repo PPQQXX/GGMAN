@@ -10,6 +10,21 @@ import java.util.TreeSet;
  * 
  * @author 11869
  *
+ *输入样例#1： 
+6 3 
+1000 90 
+3239 88 
+2390 95 
+7231 84 
+1005 95 
+1001 88
+输出样例#1： 
+88 5 
+1005 95 
+2390 95 
+1000 90 
+1001 88 
+3239 88 
  */
 public class P1068 {
 
@@ -17,7 +32,6 @@ public class P1068 {
 		int n, m, mm;// 总人数 ，预招人数
 		int id, grade;
 		int mgrade = -1;
-		int sum = 0;// 表示分数线 sum表示输出第一行第二个
 		Scanner rd = new Scanner(System.in);
 		//
 		Set<Man> set = new TreeSet<Man>();
@@ -34,7 +48,7 @@ public class P1068 {
 			man[i] = new Man(id, grade);
 			set.add(man[i]);
 		}
-
+		rd.close();
 		int j = 1;
 		for (Man man2 : set) {
 			if (mgrade == man2.grade)
@@ -44,7 +58,6 @@ public class P1068 {
 			}
 			j++;
 		}
-		boolean flag = true;
 		System.out.println(mgrade + " " + mm);
 
 		j = 1;

@@ -31,6 +31,7 @@ public class DFS_2 {
 		sy = rd.nextInt();
 		px = rd.nextInt();
 		py = rd.nextInt();
+		rd.close();
 		book[sx][sy] = 1;// 起始点 置为1
 		dfs(sx, sy, 0);
 		System.out.println(min);

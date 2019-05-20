@@ -3,9 +3,8 @@ package Algorithm;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
-
 /*
+                          类类型数组  comparable   Arrays.sort()
 10 10
 1 2 3 4 5 6 7 8 9 10
 2 4 6 8 10 12 14 16 18 20
@@ -29,6 +28,7 @@ public class P1583 {
 		for (int i = 0; i <n; i++) {
 			man[i] = new Man2(i+1, rd.nextInt());
 		}
+		rd.close();
 		// 自定义的类需要重写comparable
 		//不可以含有空的数组元素！！！
 		Arrays.sort(man);

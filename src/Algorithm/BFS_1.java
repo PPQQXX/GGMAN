@@ -25,12 +25,11 @@ public class BFS_1 {
 		// TODO Auto-generated method stub
 		int flag = 0;
 		int tx = 0, ty = 0;
-		Scanner rd = new Scanner(System.in);
+		Scanner rd = new Scanner(System.in);//其实就是你申请了一个输入流system.in在你用完这个后没有将其关闭，所以会警告
 		//这个地方注意
 		for (int i = 0; i < 500; i++) {
 			que[i]=new Que();
 		}
-		
 		
 		// 读入n行，m列
 		n = rd.nextInt();
@@ -46,7 +45,8 @@ public class BFS_1 {
 		sy = rd.nextInt();
 		px = rd.nextInt();
 		py = rd.nextInt();
-
+		//关闭
+		rd.close();
 		// 队列初始化
 		head = 1;
 		tail = 1;

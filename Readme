@@ -1,0 +1,10 @@
+0.创建包com.ggman.algorithm用于训练算法
+1.创建包com.ggman.algorithm.sort用于训练排序算法
+  包含：1.com.ggman.sort.ISort
+        2.com.ggman.algorithm.sort.BubbleSort,com.ggman.algorithm.sort.QuickSort,com.ggman.algorithm.sort.ShellSort......，分别实现ISort接口
+2.创建包com.ggman.datapump用于生成测试数据
+  包含：1.com.ggman.datapump.IPump
+       2.com.ggman.datapump.RandomNumberPump生成随机数List<Type>
+       3.com.ggman.datapump.StringPump生成随机字符串List<String>
+3.创建包com.ggman.datastructure
+      ......

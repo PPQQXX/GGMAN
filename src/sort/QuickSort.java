@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Comparator;
 
-public class QuickSort implements Sort {
+/*public class QuickSort implements Sort {
 
 	@Override
 	public <T> void sort(int[] a) {
@@ -54,7 +54,7 @@ public class QuickSort implements Sort {
 		return false;
 	}
 
-	/*
+	
 	 * @Override public void sort(int[] a) { // TODO Auto-generated method stub int
 	 * l=0,r=a.length-1; quickSort(a, l, r); }
 	 * 
@@ -66,6 +66,7 @@ public class QuickSort implements Sort {
 	 * a[i]; a[i] = t; } } // 将基数归位 a[l] = a[i]; a[i] = temp;
 	 * 
 	 * quickSort(a, l, i - 1);// zuo digui quickSort(a, i + 1, r);// you digui }
-	 */
+	 
 
 }
+*/

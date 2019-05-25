@@ -52,6 +52,7 @@ public class 字符串P1603 {
 	        for(int i=1;i<shu.length;i++) {
 	            v.append(String.format("%02d", shu[i]));
 	    }
+	        in.close();
 	        System.out.println(v.toString());
 	  }
 }

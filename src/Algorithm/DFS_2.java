@@ -6,6 +6,7 @@ import java.util.Scanner;
   输入数据
   图大小限制51下
  */
+ 
 public class DFS_2 {
 	public static int sx, sy, px, py, min = 9999;// 起始点坐标，目标点坐标
 	public static int n, m;// n行m列

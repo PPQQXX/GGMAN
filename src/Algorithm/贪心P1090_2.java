@@ -29,13 +29,7 @@ public class 贪心P1090_2 {
 
             if (list.size() == 0)
                 break;
-            if (temp >= list.get(list.size() - 1)) {//如果合并之后的堆重量比list中最大的堆重,插入在末尾
-                list.add(temp);
-            } else if (temp <= list.get(0)) {//如果合并之后的队比list中最小的要小,插入在最前面
-                list.add(0, temp);
-            } else {
-                insert(list, temp);//其他位置的插入
-            }
+           insert(list, temp);
         }
         System.out.println(sum);
 

@@ -20,7 +20,6 @@ public class BFS_1 {
 	public static int[][] book = new int[51][51];// 标记
 	public static int[][] a = new int[51][51];// 二维数组表示图
 	public static int[][] next = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };// 右边开始 顺时针旋转4
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int flag = 0;

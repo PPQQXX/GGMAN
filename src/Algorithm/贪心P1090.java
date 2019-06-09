@@ -17,11 +17,7 @@ public class 贪心P1090 {
 		int n, sum = 0;
 		Scanner in = new Scanner(System.in);
 		n = in.nextInt();
-		int[] a = new int[n];// 实际存放
-		int[] book = new int[n];// 标记
-		for (int i = 0; i < book.length; i++) {
-			book[i] = 0;// 初始化
-		}
+		int[] a = new int[n];// 实际存放每一堆
 		for (int i = 0; i < a.length; i++) {
 			a[i] = in.nextInt();
 		}

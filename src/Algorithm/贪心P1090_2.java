@@ -15,7 +15,7 @@ public class 贪心P1090_2 {
         for (int i = 0; i < n; i++) {//读入数据
             list.add(in.nextInt());
         }
-
+        in.close();
         Collections.sort(list);//使用sort排序
 
         int temp = 0, sum = 0;//temp表示合并最小的两堆后的重量,sum表示用掉的总体力
